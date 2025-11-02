@@ -11,6 +11,9 @@ RUN npm ci --production
 # Copy the rest of the application code
 COPY . .
 
+
+
+
 # Build the app
 RUN npm run build
 
@@ -20,3 +23,5 @@ RUN rm -rf /usr/share/nginx/html/*
 
 # Copy the built React app from the previous stage
 COPY --from=build /app/build /usr/share/nginx/html
+
+
