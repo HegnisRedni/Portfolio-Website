@@ -21,6 +21,8 @@ RUN npm run build
 FROM nginx:alpine
 RUN rm -rf /usr/share/nginx/html/*
 
+EXPOSE 80
+
 # Copy the built React app from the previous stage
 COPY --from=build /app/build /usr/share/nginx/html
 
